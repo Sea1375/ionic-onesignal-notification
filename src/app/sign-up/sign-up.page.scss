@@ -1,0 +1,90 @@
+ion-content{
+    --background: #fff url("/assets/bg.png") no-repeat center center / cover;
+}
+.bold-header{
+    font-size:30px;
+    font-weight: bold;
+    font-family: 'Futura';
+    color:#3A4759;
+}
+@media(max-width:320px){
+    .bold-header{font-size:22px}
+}
+
+.gray-color{
+    color:#9AA0A6;
+}
+
+.green-color{
+    color:green;
+}
+
+.button-text{
+    font-weight: bold;
+    font-size: large;
+    font-family: 'Futura';
+    --border-radius: 50px 50px 7px 7px;
+}
+
+.small-header{
+    font-size: 19px;
+    font-family: 'Futura Normal';
+}
+
+ion-item{
+    margin-left: -5px;
+    --background: transparent;
+}
+
+ion-input{
+    font-family: 'Futura Light';
+    font-size: 19px;
+    color:#3A4759
+}
+
+.kvkk-text{
+    font-family: 'Futura Normal';
+}
+
+.send{
+    font-size: 15px;
+    height: 60px;
+    font-family: 'Futura Light';
+    --background: linear-gradient(90deg, rgba(234,29,37,1) 0%,  rgba(244,127,33,1) 100%);
+    --background-activated: linear-gradient(90deg, rgba(234,29,37,1) 0%,  rgba(244,127,33,1) 100%);
+}
+
+.step{
+    font-family: 'Futura';
+    text-align: center;
+    font-size: 13px;
+}
+
+.sign-in{
+    --background: transparent;
+    --background-activated: transparent;
+    color:#3A4759;
+    border:1px solid #9AA0A6;
+    font-family: 'Futural';
+    font-size: large;
+    border-radius: 7px 7px 50px 50px ;
+}
+
+.sign-in b{
+    font-size: 20px;
+    color:#3A4759;
+    
+}
+
+.mt-60{ margin-top: 60px;}
+.mr-15{ margin-right: 15px; }
+.ml-15{ margin-left: 15px; }
+.mb-15{ margin-bottom: 15px;}
+.mt-15{ margin-top: 15px; }
+.pl-0{ padding-left: 0; }
+.pr-0{ padding-right: 0; }
+
+@media(max-width:320px){
+    .small-header{font-size:16px}
+    ion-input{font-size:16px}
+}

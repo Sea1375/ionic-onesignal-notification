@@ -1,0 +1,40 @@
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col class="dismiss-icon">
+        <ion-icon name="close-outline" (click)="dismiss()"></ion-icon>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col class="text-center">
+        <img class="fawori-header-img" src="assets/paint-badge.png">
+        <h3 class="fawori-big-text ion-text-center">
+          BOYA DETAYI
+         </h3>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-list lines='full'>
+
+          <ion-item *ngFor="let item of the_list">
+            <ion-label>
+              <h2 class="ion-float-right">{{item.amount}}LT</h2>
+              <h3>{{item.product}}</h3>
+              <p>{{item.date_of}}</p>
+            </ion-label>
+          </ion-item>
+
+        </ion-list>
+      </ion-col>
+    </ion-row>
+
+    
+
+  </ion-grid>
+</ion-content>
+<ion-footer>
+  <ion-button expand="block" (click)="dismiss()">
+    KAPAT
+  </ion-button>
+</ion-footer>

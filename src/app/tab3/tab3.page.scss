@@ -1,0 +1,29 @@
+.pt-0{padding-top: 0!important;}
+.pb-0{padding-bottom: 0!important;}
+ion-grid{
+    padding: 0;
+}
+.logo{
+    width: 25%; z-index: 3; position: fixed; left: 37%; top: 35px;
+}
+.tool{
+    background: url("/assets/header-bg.png") no-repeat top center / contain;
+    background-size: 100%;
+    text-align: center;
+    height: 200px;
+    position: fixed;
+    z-index: 2;
+}
+.paint-count-number{
+    position: absolute;
+    top: 11%;
+    left: 50%;
+    width:28%;
+    margin-left:-14%;
+    font-size: 35px;
+    color: #F48120;
+    font-family: 'Futura';
+}
+.paint-count-text{
+    font-size: 23px;
+}

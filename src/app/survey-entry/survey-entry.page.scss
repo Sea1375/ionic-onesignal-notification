@@ -1,0 +1,122 @@
+ion-content{
+    --background: linear-gradient(180deg, #F48120 30%, rgba(234,29,37,1) 100%);
+}
+ion-grid{
+    padding: 0;
+}
+@media (min-height:568px) and (max-height:666px){
+    .survey-header-text{
+        font-size: 18px!important;
+        padding: 10px 15px!important;
+    }
+    .tool{
+        height: 125px!important;
+    }
+    .survey-text{
+        padding-top: 50px!important;
+    }
+    .dots{
+        margin-top: -100px!important;
+    }
+    .start-btn{
+        width: 85%!important;
+        margin-top: 160px!important;
+    }
+}
+@media (min-height:667px) and (max-height:811px){
+    .survey-header-text{
+        font-size: 18px!important;
+        padding: 10px 15px!important;
+    }
+    .tool{
+        height: 125px!important;
+    }
+    .survey-text{
+        padding-top: 50px!important;
+    }
+    .dots{
+        margin-top: -120px!important;
+    }
+    .start-btn{
+        width: 85%!important;
+        margin-top: 185px!important;
+    }
+    .main{
+        margin-top: 30%!important;
+    }
+}
+
+@media (min-height:812px){
+    .survey-header-text{
+        font-size: 22px!important;
+        padding: 15px 30px!important;
+    }
+    .tool{
+        height: 125px!important;
+    }
+    .survey-text{
+        padding-top: 30px!important;
+        padding-bottom: 20px!important;
+    }
+    .dots{
+        margin-top: -120px!important;
+    }
+    .start-btn{
+        width: 100%!important;
+        margin-top: 185px!important;
+    }
+    .main{
+        margin-top: 40%!important;
+    }
+}
+.tool{
+    background-color:#F48120;
+    text-align: center;
+    height: 200px;
+    position: fixed;
+    padding: 0;
+}
+.back{
+    color: #fff;
+    font-size: larger;
+    left: 30px;
+    position: fixed; top:60px
+}
+.logo{
+    width: 25%; position: fixed; left: 37%; top: 35px;
+}
+.white-line{
+    margin-top: 30%;
+    width: 100%;
+}
+.start-btn{
+   margin-top: 185px;
+}
+.main{
+    margin-top: 20%;
+}
+.dots{
+    background: url("/assets/circle-dot.png") no-repeat top center / contain;
+    background-size: 180%;
+    height: 100%;
+    text-align: center;
+    margin-top: -80px;
+    z-index: 1;
+}
+.survey-text{
+    z-index: 2;
+}
+.survey-header-text{
+    font-family: 'Futura';
+    font-size: 22px;
+    color: #fff;
+    text-align: center;
+    padding: 15px 30px;
+}
+.survey-sub-text{
+    font-family: 'Futura Light';
+    font-size: 14px;
+    color: #fff;
+    text-align: center;
+    padding: 0px 30px;
+}

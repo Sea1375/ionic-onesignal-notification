@@ -1,0 +1,93 @@
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col class="tool">
+        <img src="assets/arrow-left.png" class="back" (click)="goBack()">
+        <img class="logo" src="assets/logo.png">
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <ion-slides *ngIf="poll" (ionSlideDidChange)="slideTrigger()" allowSlideNext="false" #slider>
+    <ion-slide *ngFor="let item of poll.questions; let j = index">
+      <ion-grid style="margin-top:45%;">
+        <ion-row>
+          <ion-col style="padding: 0 40px;">
+              <p style="font-family: 'Futura'; font-size: 22px;">{{item.question}}</p>
+          </ion-col>
+        </ion-row>
+        <ion-row class="ion-margin-bottom">
+          <ion-col style="padding: 0 40px;">
+            <div class="green-bg" *ngIf="item.type=='checkbox'">
+              <p>Birden fazla seçenek işaretleyebilirsiniz. </p>
+            </div>
+          </ion-col>
+        </ion-row>
+
+        <div *ngIf="item.type=='text'">
+          <ion-row style="margin-bottom: 10px;">
+            <ion-col style="padding: 0 30px;">
+              <ion-input class="options" expand="block" [(ngModel)]="poll.answers[j].val" (ionChange)="checkAnswers()"></ion-input>
+            </ion-col>
+          </ion-row>
+        </div>
+
+        <div *ngIf="item.type=='textarea'">
+          <ion-row style="margin-bottom: 10px;">
+            <ion-col style="padding: 0 30px;">
+              <ion-textarea class="options" expand="block"></ion-textarea>
+            </ion-col>
+          </ion-row>
+        </div>
+
+        <ion-list lines='none' style="margin-bottom: 10px;" class="ion-margin-start ion-margin-end"  *ngIf="item.type=='checkbox'">
+          <ion-item style="padding: 0 30px;" class="options ion-margin-bottom" *ngFor="let ans of item.answers; let i = index">
+            <ion-label>{{ans.answer}}</ion-label>
+            <ion-checkbox expand="block" value="{{ans.id}}" (ionChange)="checkAnswers()" [(ngModel)]="poll.answers[j].val[i].value"></ion-checkbox>
+          </ion-item>
+        </ion-list>
+
+        <ion-radio-group [(ngModel)]="poll.answers[j].val" (ionChange)="checkAnswers()" class="ion-margin-start ion-margin-end"  *ngIf="item.type=='radio'">
+          <ion-item lines='none' class="options ion-margin-start ion-margin-end" style="margin-bottom: 10px;" *ngFor="let ans of item.answers; let i = index">
+              <ion-label>{{ans.answer}}</ion-label>
+              <ion-radio slot="end" value="{{ans.id}}"></ion-radio>
+          </ion-item>
+        </ion-radio-group>
+
+
+      </ion-grid>
+    </ion-slide>
+
+  </ion-slides>
+</ion-content>
+<ion-footer>
+  <ion-row style="margin-bottom: 10px;">
+    <ion-col style="padding: 0 20px;">
+      <ion-button class="continue bg-gray" expand="block" disabled="{{next_status}}" (click)="nextSlide()" *ngIf="active_slide < total_questions">
+        DEVAM ET
+      </ion-button>
+
+      <ion-button class="continue done" expand="block" disabled="{{next_status}}" (click)="submitPoll()" *ngIf="active_slide == total_questions">
+        TAMAMLA
+      </ion-button>
+
+    </ion-col>
+  </ion-row>
+  <ion-row style="margin-bottom: 15px;">
+    <ion-col size=1 class="step" offset=3>
+      <ion-label class="green-color">
+        {{active_slide}}
+      </ion-label>
+    </ion-col>
+    <ion-col size=2 style="padding-left: 0; padding-right: 0;">
+      <hr style="background-color: green ;">
+    </ion-col>
+    <ion-col size=2 style="padding-left: 0; padding-right: 0;">
+      <hr style="background-color: gray;">
+    </ion-col>
+    <ion-col size=1 class="step">
+      <ion-label color="dark">
+        {{total_questions}}
+      </ion-label>
+    </ion-col>
+  </ion-row>
+</ion-footer>

@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "157141159058",
+    "project_id": "faworidunyam",
+    "storage_bucket": "faworidunyam.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:157141159058:android:7eb7822a11566509d12a4b",
+        "android_client_info": {
+          "package_name": "com.carvist.filliboya.fawori"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "157141159058-u9ro24qvj1jnl3covghpmna515uadnge.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCU3UAesCi2GVFCeMdT740ZrvavPpswoB8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "157141159058-u9ro24qvj1jnl3covghpmna515uadnge.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

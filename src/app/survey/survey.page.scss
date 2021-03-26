@@ -1,0 +1,83 @@
+ion-grid{
+    padding: 0;
+}
+.tool{
+    background: url("/assets/header-bg.png") no-repeat top center / contain;
+    background-size: 100%;
+    text-align: center;
+    height: 200px;
+    position: fixed;
+    z-index: 2;
+}
+.back{
+    color: #fff;
+    font-size: larger;
+    left: 30px;
+    position: fixed; top:60px
+}
+.logo{
+    width: 25%; position: fixed; left: 37%; top: 35px;
+}
+.green-bg{
+    background-color: #73BE44;
+    border-radius: 30px;
+    color: #fff;
+    font-family: 'Futura Light';
+    font-size: 13px;
+    text-align: center;
+}
+.green-bg p{
+    padding: 6px;
+}
+.options{
+    --background:transparent;
+    --background-activated:transparent;
+    border:1px solid #9AA0A6;
+    border-radius: 5px;
+    color: #3A4759;
+    font-family: 'Futura Normal';
+    font-size: 14px;
+    height: 50px;
+}
+.options-photo{
+    --background:transparent;
+    --background-activated:transparent;
+    border:1px solid #9AA0A6;
+    border-radius: 5px;
+    color: #3A4759;
+    font-family: 'Futura Normal';
+    font-size: 14px;
+    height: 120px;
+}
+.continue{
+    --background-activated:#D7DADE;
+    color: #fff;
+    font-family: 'Futura Normal';
+    font-weight: bold;
+    font-size: 15px;
+    height: 70px;
+    --border-radius: 100px 100px 7px 7px;
+}
+.done{
+    --background: linear-gradient(90deg, rgba(234,29,37,1) 0%,  rgba(244,127,33,1) 100%);
+    --background-activated: linear-gradient(90deg, rgba(234,29,37,1) 0%,  rgba(244,127,33,1) 100%);
+}
+.step{
+    font-family: 'Futura';
+    text-align: center;
+    font-size: 13px;
+}
+.green-color{
+    color:green;
+}
+ion-textarea{
+    border:1px solid #9AA0A6;
+    border-radius: 5px;
+    --background: #FAFAFA;
+    text-align: center;
+    font-family: 'Futura Normal';
+    height: 255px;
+}
+ion-footer{
+    background-color: #fff;
+}

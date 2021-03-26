@@ -1,0 +1,200 @@
+ion-grid{
+    padding: 0;
+}
+@media (min-height:568px) and (max-height:666px){
+    .tool{
+        height: 140px!important;
+    }
+    .grid{
+        top: 55%!important;
+    }
+    .main{
+        margin-top: 50%!important;
+        text-align: center!important;
+    }
+    .success{
+        top: 5px!important;
+        right: 5px!important;
+    }
+}
+@media (min-height:667px) and (max-height:735px){
+    .tool{
+        height: 180px!important;
+    }
+    .grid{
+        top: 55%!important;
+    }
+    .main{
+        margin-top: 50%!important;
+        text-align: center!important;
+    }
+}
+@media (min-height:736px) and (max-height:811px){
+    .tool{
+        height: 180px!important;
+    }
+    .grid{
+        top: 55%!important;
+    }
+    .main{
+        margin-top: 50%!important;
+        text-align: center!important;
+    }
+}
+@media (min-height:812px){
+    .tool{
+        height: 165px!important;
+    }
+    .grid{
+        top: 55%!important;
+    }
+    .main{
+        margin-top: 50%!important;
+        text-align: center!important;
+    }
+}
+.tool{
+    background: url("/assets/header-bg.png") no-repeat top center / contain;
+    background-size: 100%;
+    text-align: center;
+    height: 200px;
+    position: fixed;
+    z-index: 2;
+}
+.back{
+    color: #fff;
+    font-size: larger;
+    left: 30px;
+    position: fixed; top:60px
+}
+.logo{
+    width: 25%; z-index: 3; position: fixed; left: 37%; top: 35px;
+}
+.rosette{
+    margin-top: -20px;
+    padding: 0 20px;
+}
+.rosette h4{
+    font-family: 'Futura';
+    font-size:22px;
+    color:#3A4759;
+}
+.rosette p{
+    padding-top: 15px;
+    font-family: 'Futura Light';
+    font-size: 16px;
+    color:#9AA0A6;
+}
+.light-gray{
+    background: #fff url("/assets/bg-light-gray.png") no-repeat top center / contain;
+    background-size: 100%;
+}
+.light-gray h4{
+    text-align: left;
+    font-family: 'Futura';
+    font-size:18px;
+    color:#3A4759;
+    margin-top: 35px;
+    padding: 0 20px 0 5px;
+}
+.light-gray p{
+    text-align: left;
+    font-family: 'Futura Normal';
+    font-size:14px;
+    color:#9AA0A6;
+    margin-top: 15px;
+    padding: 0 20px 0 5px;
+}
+.light-gray h3{
+    text-align: left;
+    font-family: 'Futura';
+    font-weight: normal;
+    font-size:16px;
+    margin-top: 15px;
+    margin-bottom: 35px;
+    padding: 0 20px 0 5px;
+}
+.step-circle{
+    width: 44px;
+    height: 44px;
+    border-radius: 50px;
+    background: linear-gradient(180deg,#F48120 0%, #EA1D25 100%);
+    top: 13px;
+    left: 50%;
+    margin-left:-22px;
+    position: absolute;
+}
+.step-circle.green{
+    background: #73BE44;
+}
+.step-circle,.step-circle-green .number{  
+    color:#fff;
+    font-family: 'Futura';
+    font-size:26px;
+    padding: 5px 0 0 1px;
+}
+.card{
+    border-radius: 10px; 
+    width: 90%; 
+    margin: auto;
+    margin-top: 20px; 
+    background: #fff; 
+    box-shadow: 0px 2px 25px -5px gray; 
+    position: relative; 
+    top: -50px;
+}
+.success{
+    position: absolute;
+    top: 15px;
+    right: 15px;
+}
+.bg-green{
+    background: #fff url("/assets/green-bg.png") no-repeat top center / contain;
+    background-size: 100%;
+}
+.slide-div{
+    margin: auto; 
+    width: 100%;
+}
+.slide-bg{
+    width: 62%;
+}
+.slide-logo{
+    position: absolute; 
+    top: 20px; 
+    left: 30%; 
+    width: 40%;
+    border-radius: 50%!important;
+    overflow: hidden;
+}
+.slide-text-div{
+    position: relative; 
+    top: -210px;
+}
+.slide-text-div h4{
+    color:#fff; 
+    margin: auto; 
+    width: 62%; 
+    text-align: center; 
+    padding-left: 20px;
+    margin-top: 15px;
+}
+.slide-text-div p{
+    color:#fff; 
+    margin:auto; 
+    width:62%; 
+    text-align: center; 
+    padding-left: 20px;
+    margin-top: 15px;
+    margin-bottom: 40px;
+}
+.slide-btn{
+    --background:transparent; 
+    --background-activated:transparent; 
+    border:1px solid #fff; 
+    border-radius: 50px 50px 7px 7px; 
+    margin: 0 85px; 
+    font-family: 'Futura'; 
+    font-size: 13px;
+    height: 50px;
+}

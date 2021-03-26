@@ -1,0 +1,276 @@
+.pt-0{padding-top: 0!important;}
+.pb-0{padding-bottom: 0!important;}
+ion-grid{
+    padding: 0;
+}
+@media(min-height: 568px) and (max-height: 666px){
+    .tool{
+        height: 28%!important;
+    }
+    .my-fawori-text{
+        left:12.5%!important;
+    }
+    .my-share-text{
+        right: 11%!important;
+    }
+    .my-fawori-bg , .my-share-bg{
+        width: 40%!important;
+    }
+    .photo{
+        left: 29%!important;
+    }
+    .profile-photo{
+        left: 38%!important;
+        top: 17%!important;
+    }
+}
+
+@media(min-height: 667px) and (max-height: 735px){
+    .tool{
+        height: 30%!important;
+    }
+}
+
+@media(min-height: 736px) and (max-height: 811px){
+    .tool{
+        height: 28%!important;
+    }
+    .my-fawori-number{
+        left: 15%!important;
+    }
+    .my-share-number{
+        right: 15%!important;
+    }
+    .my-fawori-text{
+        left:12.5%!important;
+    }
+    .my-share-text{
+        right: 11%!important;
+    }
+    .my-fawori-icon{
+        left: 15%!important;
+    }
+    .my-share-icon{
+        right: 15%!important;
+    }
+    .photo{
+        left: 29%!important;
+    }
+    .profile-photo{
+        left: 38%!important;
+        top: 17%!important;
+    }
+}
+.logo{
+    width: 25%; z-index: 3; position: fixed; left: 37%; top: 35px;
+}
+.avatar{
+    width: 25%; z-index: 4; position: fixed; right: 5%; top: 20px;border-radius: 50%!important;overflow: hidden;
+}
+.tool{
+    background: url("/assets/header-bg.png") no-repeat top center / contain;
+    background-size: 100%;
+    text-align: center;
+    height: 200px;
+    position: fixed;
+    z-index: 2;
+}
+.my-fawori-number{
+    position: absolute;
+    left: 16.5%;
+    top: 12%;
+    font-size: 24px;
+    font-family: 'Futura';
+    z-index: 2;
+    color:#F48120;
+}
+.my-fawori-text{
+    position: absolute;
+    top: 30%;
+    z-index: 2;
+    left: 14%;
+    font-size: 10px;
+    font-family: 'Futura Light';
+}
+.my-fawori-bg{
+    position: absolute;
+    left: 0;
+}
+.my-fawori-icon{
+    position: absolute;
+    left: 16%;
+    top: 42%;
+}
+.profile-photo{
+    position: absolute;
+    z-index: 2;
+    left: 39%;
+    width: 24%;
+    top: 16%;
+}
+.photo{
+    position: absolute;
+    left: 30%;
+    width: 42%;
+    top: 9%;
+}
+.my-share-number{
+    position: absolute;
+    right: 16.5%;
+    top: 12%;
+    font-size: 24px;
+    font-family: 'Futura';
+    z-index: 2;
+    color:#73BE44;
+}
+.my-share-text{
+    position: absolute;
+    right: 12%;
+    z-index: 2;
+    top: 30%;
+    font-size: 10px;
+    font-family: 'Futura Light';
+}
+.my-share-bg{
+    position: absolute;
+    right: 0;
+}
+.my-share-icon{
+    position: absolute;
+    right: 16%;
+    top: 42%;
+}
+.swiper-slide {
+    width: auto!important;
+}
+.rosette-icon{
+    max-width: 100px;margin-right: 20px;position:relative
+}
+ion-slide{
+    margin-bottom: 5%;
+}
+.rosette-img{
+    position: absolute;
+    bottom: -5%;
+    width: 25%;
+    left:30%;
+}
+.rosette-detail{
+    margin: 0 5%;
+    border-radius: 5px;
+    background: #D8DBDE;
+}
+.rosette-detail-img{
+}
+.rosette-detail-text{
+    padding: 10% 0 10% 0;
+}
+.rosette-detail-text-header{
+    font-family: 'Futura';
+    font-size: 16px;
+    color:#3A4759;
+}
+.rosette-detail-text-sub{
+    font-family: 'Futura Normal';
+    font-size: 13px;
+    color:#231F20;
+}
+.menu{
+    border:1px solid #E7E7E7;
+    border-radius: 10px;
+    margin: 5%;
+    color:#3A4759;
+    font-size: 18px;
+    font-family: 'Futura';
+}
+.menu-open{
+    border:1px solid #E7E7E7;
+    border-radius: 10px;
+    margin: 0 5%;
+    color:#FFF;
+    font-size: 18px;
+    font-family: 'Futura';
+    background-color: #3A4759;
+}
+.menu-icon{
+    margin: 25% 0 0 10%;
+}
+h4{
+    margin-top: 10px;
+}
+.icon{
+    position: absolute;
+    right: 5%;
+    top:50%;
+    margin-top:-10px;
+    color:#E7E7E7;
+}
+.menu-sub-text{
+    font-size: 14px;
+    color:#FFF;
+    font-family: 'Futura Normal';
+    margin: 0 0 5% 0;
+}
+.info{
+    --background: #0180DF;
+    --background-actvated: #0180DF;
+    color:#fff;
+    font-family: 'Futural';
+    font-size: large;
+    --border-radius: 50px 50px;
+    --border-style:solid;
+    --border-width:2px;
+    --border-color:#fff;
+    --padding-start:50px;
+    --padding-end:50px;
+}
+.info-main ion-input{
+    font-family: 'Futura Normal';
+    font-size: 16px;
+    color:#3A4759;
+}
+.info-header-text{
+    font-family: 'Futura Light';
+    font-size: 14px;
+    padding: 0 5%;
+}
+.info-items{
+    padding-right: 5%;
+}
+.paint-count-number{
+    position: absolute;
+    top: 11%;
+    left: 50%;
+    width:28%;
+    margin-left:-14%;
+    font-size: 35px;
+    color: #F48120;
+    font-family: 'Futura';
+}
+.black-rosette{
+    -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+    filter: grayscale(100%);
+}
+.paint-count-text{
+    font-size: 23px;
+}
+.settings-text{
+    font-family: 'Futura Normal';
+    font-size: 13px;
+    color:#9AA0A6;
+    padding: 1% 0 0 5%;
+}
+ion-checkbox{
+    --background-checked: transparent;
+    --checkmark-color:#73BE44;
+    --border-color-checked:#73BE44;
+    --border-color: #E7E7E7;
+}
+.exit{
+    --border-radius: 50px 50px 7px 7px;
+    --background:#EA1D25;
+    --background-activated: #EA1D25;
+    font-family: 'Futura';
+    font-size: 15px;
+    height: 50px;
+}

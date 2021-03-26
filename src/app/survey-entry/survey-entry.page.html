@@ -1,0 +1,31 @@
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col class="tool">
+        <img src="assets/arrow-left.png" class="back" (click)="goBack()" *ngIf="poll && poll.for_what!='avatar'">
+        <img class="logo" src="assets/logo.png">
+        <img class="white-line" src="assets/white-line-orange.png">
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <ion-grid class="main" *ngIf="poll">
+    <ion-row class="">
+      <ion-col class="survey-text">
+        <ion-label>
+          <h4 class="survey-header-text">
+            {{poll.title}}
+          </h4>
+          <p class="survey-sub-text" [innerHtml]="contents.start_survey_title">
+            
+          </p>
+        </ion-label>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col class="dots">
+        <img class="start-btn" src="assets/start-survey-btn.png" (click)="goSurvey()">
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

@@ -1,0 +1,62 @@
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col class="tool" style="background-image:url('{{chance.image}}')">
+        <img class="back" src="assets/arrow-left.png" (click)="goBack()">
+        <img src="assets/white-line.png" class="bottom-line {{chance.color_title}}">
+        
+        <ion-item-sliding class="slide-item" *ngIf="chance.icon" style="display: none;">
+          <ion-item lines="none" class="slide-item-close">
+            <div class="rosette {{chance.color_title}}">
+              <img src="{{chance.icon}}">
+            </div>
+          </ion-item>
+      
+          <ion-item-options side="end">
+            <ion-item-option lines="none" class="slide-item-open">
+              <img class="rosette" src="assets/chance-1-detail-rosette-open.png">
+            </ion-item-option>
+          </ion-item-options>
+        </ion-item-sliding>
+        
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <ion-grid class="grid">
+    <ion-row>
+      <ion-col class="chance-date">
+        <ion-label>
+          GEÇERLİLİK TARİHİ: <b>{{chance.date_text}}</b>
+        </ion-label>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col class="chance-header {{chance.color_title}}">
+        <ion-label>
+          {{chance.title}}
+        </ion-label>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col class="chance-subtitle">
+        <p [innerHtml]="chance.content"></p>
+      </ion-col>
+    </ion-row>
+
+    <ion-row style="display: none;">
+      <ion-col class="chance-button">
+        <ion-button class="participation" expand="block">
+          KATILIM HAKKI: <b> 2</b>
+        </ion-button>
+      </ion-col>
+    </ion-row>
+
+    <ion-row *ngIf="chance.rosette_id">
+      <ion-col class="chance-rosette-button ion-margin-start ion-margin-end {{chance.color_title}}" (click)="goRosetteDetail(chance.rosette_id)">
+        <img src="assets/rosette-btn.png">
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

@@ -1,0 +1,35 @@
+h4{
+    color: #3A4759;
+    font-family: 'Futura';
+    font-size: 26px;
+    text-align: center;
+    padding: 40px 0 0 0;
+}
+p{
+    color:#9AA0A6;
+    font-family: 'Futura Normal';
+    font-size: 14px;
+    text-align: center;
+    padding: 10px 30px 0 25px;
+}
+.btn{
+    padding: 135px 25px;
+}
+.invite-btn{
+    --background:#D7DADE;
+    --background-activated:#D7DADE;
+    color: #fff;
+    font-family: 'Futura Normal';
+    font-weight: bold;
+    font-size: 15px;
+    height: 60px;
+    --border-radius: 100px 100px 7px 7px;
+}
+.invite-btn.active{
+    --background:#73be44
+}
+ion-input{
+    --placeholder-color:#3A4759;
+    font-family: 'Futura Light';
+    font-size: 19px;
+}

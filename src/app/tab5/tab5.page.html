@@ -1,0 +1,283 @@
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col class="tool">
+        <img class="logo" src="assets/logo.png">
+        <ion-img *ngIf="user_avatar" class="avatar" [src]="user_avatar.image"></ion-img>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <ion-grid style="margin-top: 46%;min-height: 132px;">
+    <ion-row>
+      <ion-col>
+        <ion-slides class="profile-rosette-slide" pager="false" [options]="slideOpts">
+          <ion-slide *ngFor="let rosette of rosettes" (click)="showRosette(rosette)">
+            <img [ngClass]="{'black-rosette': rosette.completed == 'false', 'multicolor-rosette': rosette.completed == 'true' }"
+              src="{{rosette.icon}}" class="rosette-icon">
+              <img *ngIf="rosette.completed === 'true'" class="rosette-img" src="assets/success-icon.png">
+          </ion-slide>
+        </ion-slides>
+      </ion-col>
+    </ion-row>
+    <!--
+    <ion-row class="rosette-detail">
+      <ion-col size=4>
+        <img class="rosette-detail-img" src="assets/profile-rosette-detail-bg.png">
+      </ion-col>
+      <ion-col size=8>
+        <div class="rosette-detail-text">
+          <ion-label>
+            <h5 class="rosette-detail-text-header">
+              Rozet açıklaması <br>
+              detaylar
+            </h5>
+            <p class="rosette-detail-text-sub">
+              Lorem Ipsum is simply dummy<br>
+              text of the printing and<br>
+              typesetting industry.
+            </p>
+          </ion-label>
+        </div>
+      </ion-col>
+    </ion-row>
+    -->
+  </ion-grid>
+
+  <ion-grid style="margin-top: 5%;">
+    <ion-row [ngClass]="{'menu': info == false, 'menu-open': info == true }" (click)="information()">
+      <ion-col size=2>
+        <img class="menu-icon" *ngIf="info == true" src="assets/profile-icon-white.png">
+        <img class="menu-icon" *ngIf="info == false" src="assets/profile-icon-orange.png">
+      </ion-col>
+
+      <ion-col size=10 (click)="information()">
+        <h4 (click)="information()">PROFİL BİLGİLERİ
+          <ion-icon *ngIf="info == false" class="icon" name="chevron-down-outline"></ion-icon>
+          <ion-icon *ngIf="info == true" class="icon" name="chevron-up-outline"></ion-icon>
+        </h4>
+      </ion-col>
+      <ion-col *ngIf="info == true" offset=2 size=10>
+        <p class="menu-sub-text" [innerHtml]="contents.profile_sub_title"></p>
+      </ion-col>
+    </ion-row>
+    <ion-row *ngIf="info == true" class="info-main">
+      <ion-col size=12 class="pt-0 pb-0">
+        <h6 class="info-header-text text-dark">Ad</h6>
+        <ion-item class="info-items">
+          <ion-input [(ngModel)]='user.name'></ion-input>
+        </ion-item>
+      </ion-col>
+      <ion-col size=12 class="pt-0 pb-0">
+        <h6 class="info-header-text text-dark">Soyad</h6>
+        <ion-item class="info-items">
+          <ion-input [(ngModel)]='user.lastname'></ion-input>
+        </ion-item>
+      </ion-col>
+      <ion-col size=12 class="pt-0 pb-0">
+        <h6 class="info-header-text text-dark">Telefon</h6>
+        <ion-item class="info-items">
+          <ion-input disabled='true'>{{user.phone}}</ion-input>
+        </ion-item>
+      </ion-col>
+      <ion-col size=12 class="pt-0 pb-0">
+        <h6 class="info-header-text text-dark">E-Posta</h6>
+        <ion-item class="info-items">
+          <ion-input [(ngModel)]='user.email'></ion-input>
+        </ion-item>
+      </ion-col>
+      <ion-col size=12 class="pt-0 pb-0">
+        <h6 class="info-header-text text-dark">Beden</h6>
+        <ion-item class="info-items">
+          <ion-select placeholder="Beden" [(ngModel)]="user_info.size" cancelText="Vazgeç" okText="Seç">
+            <ion-select-option value="M">M</ion-select-option>
+            <ion-select-option value="L">L</ion-select-option>
+            <ion-select-option value="XL">XL</ion-select-option>
+          </ion-select>
+        </ion-item>
+      </ion-col>
+      <ion-col size=12 class="pt-0 pb-0">
+        <h6 class="info-header-text text-dark">Medeni Durum</h6>
+        <ion-item class="info-items">
+          <ion-select placeholder="Medeni Durum" [(ngModel)]="user_info.marital" cancelText="Vazgeç" okText="Seç">
+            <ion-select-option value="1">Evli</ion-select-option>
+            <ion-select-option value="0">Bekar</ion-select-option>
+          </ion-select>
+        </ion-item>
+      </ion-col>
+      <ion-col size=12 class="pt-0 pb-0">
+        <h6 class="info-header-text text-dark">Doğum Tarihi</h6>
+        <ion-item class="info-items">
+          <ion-datetime displayFormat="DD/MM/YYYY" [(ngModel)]="user_info.birthdate" min="1970-01-01" max="2022-12-31"></ion-datetime>
+        </ion-item>
+      </ion-col>
+      <ion-col size=12 class="pt-0 pb-0">
+        <h6 class="info-header-text text-dark">İl</h6>
+        <ion-item class="info-items">
+          <ion-select okText="Seç" cancelText="Vazgeç" [(ngModel)]="user_info.city" *ngIf="cities" (ionChange)="cityChanged()">
+            <ion-select-option *ngFor="let city of cities" [value]="city.id">{{city.name}}</ion-select-option>
+          </ion-select>
+        </ion-item>
+      </ion-col>
+      <ion-col size=12 class="pt-0 pb-0">
+        <h6 class="info-header-text text-dark">İlçe</h6>
+        <ion-item class="info-items">
+          <ion-select okText="Seç" cancelText="Vazgeç" [(ngModel)]="user_info.district" *ngIf="districts">
+            <ion-select-option *ngFor="let district of districts" [value]="district.id">{{district.name}}</ion-select-option>
+          </ion-select>
+        </ion-item>
+      </ion-col>
+      <ion-col size=12 class="pt-0 pb-0">
+        <h6 class="info-header-text text-dark">Adres</h6>
+        <ion-item class="info-items">
+          <ion-textarea [(ngModel)]="user_info.address" rows=3></ion-textarea>
+        </ion-item>
+      </ion-col>
+      <ion-col size=12 class="">
+        <ion-button class="ion-margin-start ion-margin-end gray-btn" expand="block" (click)="updateProfile()">
+          <ion-label>
+            GÜNCELLE
+          </ion-label>
+        </ion-button>
+      </ion-col>
+    </ion-row>
+
+    <ion-row [ngClass]="{'menu': paint == false, 'menu-open': paint == true }" (click)="paintCounter()">
+      <ion-col size=2>
+        <img class="menu-icon" *ngIf="paint == true" src="assets/paint-icon-white.png">
+        <img class="menu-icon" *ngIf="paint == false" src="assets/paint-icon-orange.png">
+      </ion-col>
+
+        <ion-col size=10 (click)="paintCounter()">
+        <h4 (click)="paintCounter()">BOYA SAYACI
+          <ion-icon *ngIf="paint == false" class="icon" name="chevron-down-outline"></ion-icon>
+          <ion-icon *ngIf="paint == true" class="icon" name="chevron-up-outline"></ion-icon>
+        </h4>
+      </ion-col>
+      <ion-col *ngIf="paint == true" offset=2 size=10>
+        <p class="menu-sub-text" [innerHtml]="contents.paint_counter_sub_title"></p>
+      </ion-col>
+    </ion-row>
+
+    <ion-row *ngIf="paint == true" style="padding: 10% 5% 0 5%;">
+      <ion-col style="text-align: center;">
+        <img src="assets/paint-counter-bg.png">
+        <ion-label>
+          <h2 class="paint-count-number">
+            {{user_info.total_count}} <b class="paint-count-text">LT</b>
+          </h2>
+        </ion-label>
+      </ion-col>
+    </ion-row>
+    <ion-row *ngIf="paint == true" style="padding: 0 5% 10% 5%;">
+      <ion-col class="ion-text-center">
+        <ion-button class="info ion-margin-start ion-margin-end" (click)="showPaintHistory()">
+          <ion-icon slot="start" name="information-circle-outline"></ion-icon>
+          BOYA DETAYI
+        </ion-button>
+      </ion-col>
+    </ion-row>
+
+    <ion-row (click)="showRosetteList()" class="menu">
+      <ion-col size=2>
+        <ion-icon style='color:#F4872D;font-size:28px;margin-top:10px;margin-left:2px' name="medal-outline"></ion-icon>
+      </ion-col>
+
+      <ion-col size=10>
+        <h4>ROZETLERİM
+          <ion-icon class="icon" name="chevron-forward-outline"></ion-icon>
+        </h4>
+      </ion-col>
+    </ion-row>
+
+    <ion-row (click)="showGiftList()" class="menu">
+      <ion-col size=2>
+        <ion-icon style='color:#F4872D;font-size:28px;margin-top:10px;margin-left:2px' name="gift-outline"></ion-icon>
+      </ion-col>
+
+      <ion-col size=10>
+        <h4>HEDİYELERİM
+          <ion-icon class="icon" name="chevron-forward-outline"></ion-icon>
+        </h4>
+      </ion-col>
+    </ion-row>
+
+    <!--
+    <ion-row [ngClass]="{'menu': avatar == false, 'menu-open': avatar == true }" (click)="avatars()">
+      <ion-col size=2>
+        <img class="menu-icon" *ngIf="avatar == true" src="assets/avatar-icon-white.png">
+        <img class="menu-icon" *ngIf="avatar == false" src="assets/avatar-icon-orange.png">
+      </ion-col>
+
+        <ion-col size=10 (click)="avatars()">
+        <h4 (click)="avatars()">AVATARLAR
+          <ion-icon *ngIf="avatar == false" class="icon" name="chevron-down-outline"></ion-icon>
+          <ion-icon *ngIf="avatar == true" class="icon" name="chevron-up-outline"></ion-icon>
+        </h4>
+      </ion-col>
+      <ion-col *ngIf="avatar == true" offset=2 size=10>
+        <p class="menu-sub-text">İletişim izinlerinizi tercihlerinize göre değiştirebilirsiniz.</p>
+      </ion-col>
+    </ion-row>
+    -->
+
+    <ion-row [ngClass]="{'menu': setting == false, 'menu-open': setting == true }" (click)="settings()">
+      <ion-col size=2>
+        <img class="menu-icon" *ngIf="setting == true" src="assets/settings-icon-white.png">
+        <img class="menu-icon" *ngIf="setting == false" src="assets/settings-icon-orange.png">
+      </ion-col>
+
+      <ion-col size=10 (click)="settings()">
+        <h4 (click)="settings()">AYARLAR
+          <ion-icon *ngIf="setting == false" class="icon" name="chevron-down-outline"></ion-icon>
+          <ion-icon *ngIf="setting == true" class="icon" name="chevron-up-outline"></ion-icon>
+        </h4>
+      </ion-col>
+      <ion-col *ngIf="setting == true" offset=2 size=10>
+        <p class="menu-sub-text" [innerHtml]="contents.settings_sub_title"></p>
+      </ion-col>
+    </ion-row>
+    <ion-row *ngIf="setting == true" style="padding: 5%;">
+      <ion-col size=1> <ion-checkbox [(ngModel)]="permissions.call_permission" (ionChange)="sendPermissions()"></ion-checkbox> </ion-col>
+      <ion-col size=11>
+        <ion-label> <p class="settings-text"> Arama </p> </ion-label>
+      </ion-col>
+
+      <ion-col size=1> <ion-checkbox [(ngModel)]="permissions.sms_permission" (ionChange)="sendPermissions()"></ion-checkbox> </ion-col>
+      <ion-col size=11>
+        <ion-label> <p class="settings-text"> SMS İzni </p> </ion-label>
+      </ion-col>
+
+      <ion-col size=1> <ion-checkbox [(ngModel)]="permissions.email_permission" (ionChange)="sendPermissions()"></ion-checkbox> </ion-col>
+      <ion-col size=11>
+        <ion-label> <p class="settings-text"> Email Gönderim İzni </p> </ion-label>
+      </ion-col>
+
+      <ion-col size=1> <ion-checkbox [(ngModel)]="permissions.push_permission" (ionChange)="sendPermissions()"></ion-checkbox> </ion-col>
+      <ion-col size=11>
+        <ion-label> <p class="settings-text"> Push Notification İzni </p> </ion-label>
+      </ion-col>
+    </ion-row>
+
+    
+    <ion-row (click)="getSupport()" class="menu">
+        <ion-col size=2>
+          <img class="menu-icon" src="assets/support-icon-orange.png">
+        </ion-col>
+  
+        <ion-col size=10>
+          <h4>BİZE ULAŞIN
+            <ion-icon class="icon" name="chevron-forward-outline"></ion-icon>
+          </h4>
+        </ion-col>
+    </ion-row>
+
+    <ion-row class="ion-margin-bottom">
+      <ion-col style="padding: 0 5%;">
+        <ion-button class="exit" expand="block" (click)="logout()">
+          ÇIKIŞ YAP
+        </ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

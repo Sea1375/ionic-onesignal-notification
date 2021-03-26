@@ -1,0 +1,33 @@
+<ion-content scrollY='false'>
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <ion-label>
+          <h4>GÖREVİ TAMAMLA</h4>
+          <p>{{desc}}</p>
+        </ion-label>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col class="icon" *ngFor="let img of images" size='{{cols}}' style="padding-top:{{padding_top}};max-height:200px">
+        <img src="assets/upload-img-icon.png" *ngIf="!img.file && type=='photo'" (click)="presentActionSheet(img)">
+        <img src="assets/upload-img-icon.png" *ngIf="!img.file && type=='video'" (click)="presentVideoSheet(img)">
+        <ion-fab-button *ngIf="img.file" color='danger' style="margin-bottom:-50px" (click)="presentAlertConfirm(img)">
+          <ion-icon name="trash"></ion-icon>
+        </ion-fab-button>
+        <ion-img [src]="img.file" *ngIf="img.file" style="border-radius:10px;overflow:hidden;margin:10px"></ion-img>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
+<ion-footer>
+  <ion-button expand="block" class="upload-btn bg-gray ion-margin-start ion-margin-end" (click)="presentSendConfirm()" disabled="{{can_upload}}">
+    GÖRSEL YÜKLE
+  </ion-button>
+  <ion-button class="ion-margin-start ion-margin-end cancel-btn" expand="block" (click)="cancel()">
+    <ion-label>
+      İPTAL
+    </ion-label>
+  </ion-button>
+</ion-footer>

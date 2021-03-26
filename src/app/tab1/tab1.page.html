@@ -1,0 +1,243 @@
+<ion-content scroll="true">
+  <ion-grid class="p-0">
+    <ion-row>
+      <ion-col class="text-center tool">
+        <img class="logo" src="assets/logo.png">
+      </ion-col>
+    </ion-row>
+    <ion-row class="menu-row">
+      <ion-col size=11 class="menu">
+        <ion-segment [(ngModel)]="selectedMenu" (ionChange)="segmentChanged($event)" value="rosette">
+          <ion-segment-button value="rosette">
+            <ion-label>
+              <img src="assets/rosette-icon.png">
+              <a>
+                Rozetler
+              </a>
+            </ion-label>
+          </ion-segment-button>
+          <ion-segment-button value="chance">
+            <ion-label>
+              <img src="assets/chance-icon-2.png">
+              <a>Fırsatlar</a>
+            </ion-label>
+          </ion-segment-button>
+          <ion-segment-button value="news">
+            <ion-label>
+              <img src="assets/news-icon.png">
+              <a>Haberler</a>
+            </ion-label>
+          </ion-segment-button>
+        </ion-segment>
+      </ion-col>
+    </ion-row>
+
+    <div *ngIf="selectedMenu === 'rosette'" class="main">
+      <ion-row class="header-text">
+        <ion-col>
+          <ion-label>
+            ROZETLER
+          </ion-label>
+        </ion-col>
+      </ion-row>
+
+      <ion-row class="sub-text">
+        <ion-col>
+          <ion-label>
+            {{contents.rozet_title}}
+          </ion-label>
+        </ion-col>
+      </ion-row>
+      
+      <!-- <ion-row class="mt-15 ion-margin-start" *ngFor="let item of rosettes" [ngClass]="item.state==1 ? '' : 'disabled' " (click)="item.state==1 ? goRosetteDetail(item.id) : soonAlert()"> -->
+      <ion-row class="mt-15 ion-margin-start" *ngFor="let item of rosettes" [ngClass]="item.state==1 ? '' : 'disabled' " (click)="goRosetteDetail(item.id)">
+        <ion-col size=3 class="pr-0">
+          <ion-img class="rosette-img" [src]="item.icon"></ion-img>
+        </ion-col>
+        <ion-col size=6 class="pr-0 pl-0 m-a">
+          <ion-label>
+            <h4>{{item.title}}</h4>
+            <p style="padding-right: 5px;">{{item.short_desc}}</p>
+          </ion-label>
+        </ion-col>
+        <ion-col size=2 class="pl-0 m-a text-center">
+          <img src="assets/button.png">
+        </ion-col>
+      </ion-row>
+
+      
+    </div>
+    <div *ngIf="selectedMenu === 'chance'" class="main">
+      <ion-row class="header-text">
+        <ion-col>
+          <ion-label>
+            FIRSATLAR
+          </ion-label>
+        </ion-col>
+      </ion-row>
+
+      <ion-row class="chance {{chance.color_title}}" *ngFor="let chance of chances">
+        <ion-col size=11 class="chance-col {{chance.color_title}}">
+          <div class="chance-icon" *ngIf="chance.icon">
+            <ion-img [src]="chance.icon" class="chance-rosette"></ion-img>
+          </div>
+          <ion-img [src]="chance.image" class="chance-image"></ion-img>
+          <img src="assets/{{chance.color_title}}-btn.png" class="chance-button" (click)="goChanceDetail(chance.id)">
+        </ion-col>
+        <ion-col>
+          <ion-label>
+            <h4 class="chance-header">{{chance.title}}</h4>
+            <p class="chance-text">{{chance.short_desc}}</p>
+            <p class="chance-date">{{chance.date_text}}</p>
+          </ion-label>
+        </ion-col>
+      </ion-row>
+
+      
+    </div>
+
+    <div *ngIf="selectedMenu === 'news'" class="main">
+      <ion-row class="header-text">
+        <ion-col>
+          <ion-label>
+            HABERLER
+          </ion-label>
+        </ion-col>
+      </ion-row>
+      <ion-slides pager="true" class="mySlider">
+        <ng-container *ngFor="let item of news">
+          <ion-slide *ngIf="item.slider==1">
+            <ion-row class="news-slider">
+              <ion-col size=11 class="news-col">
+                <!-- <img src="assets/chance-2-rosette.png" class="chance-rosette"> -->
+                <ion-img [src]="item.image" class="chance-image"></ion-img>
+                <img src="assets/green-btn.png" class="chance-button" (click)="goNewsDetail(item.id)">
+              </ion-col>
+              <ion-col size=11>
+                <ion-label>
+                  <h4 class="chance-header">{{item.title}}</h4>
+                  <p class="chance-text">{{item.short_desc}}</p>
+                  <p class="chance-date">{{item.date_text}}</p>
+                </ion-label>
+              </ion-col>
+            </ion-row>
+          </ion-slide>
+        </ng-container>
+
+      </ion-slides>
+
+      <ion-row class="header-text">
+        <ion-col>
+          <ion-label>
+            FAWORİ HABERLER
+          </ion-label>
+        </ion-col>
+      </ion-row>
+      <ng-container *ngFor="let item of news">
+      <ion-row *ngIf="item.slider==0" class="fawori-news" (click)="goNewsDetail(item.id)">
+        <ion-col>
+          <ion-img [src]="item.image" class="p-15"></ion-img>
+        </ion-col>
+        <ion-col class="pt-20 pl-0">
+          <ion-label class="fawori-news-header">
+            <a>
+              {{item.title}}
+            </a>
+            <p>
+              {{item.short_desc}}
+            </p>
+          </ion-label>
+        </ion-col>
+      </ion-row>
+      </ng-container>
+      <!--
+      <ion-row class="second-col-news">
+
+        <ion-col size=6 class="p-0" style="padding-right: 5px;">
+          <div class="news-card">
+            <img src="assets/news-5.png">
+            <ion-label>
+              <h4 class="news-card-header">
+                EV
+              </h4>
+              <p class="news-card-subtitle">
+                Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+              </p>
+            </ion-label>
+          </div>
+        </ion-col>
+
+        <ion-col size=6 class="p-0" style="padding-left: 5px;">
+          <div class="news-card">
+            <img src="assets/news-6.png">
+            <ion-label>
+              <h4 class="news-card-header">
+                OFİS
+              </h4>
+              <p class="news-card-subtitle">
+                Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+              </p>
+            </ion-label>
+          </div>
+        </ion-col>
+      </ion-row>
+      <ion-row class="second-col-news">
+
+        <ion-col size=6 class="p-0" style="padding-right: 5px;">
+          <div class="news-card">
+            <img src="assets/news-7.png">
+            <ion-label>
+              <h4 class="news-card-header">
+                EV
+              </h4>
+              <p class="news-card-subtitle">
+                Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+              </p>
+            </ion-label>
+          </div>
+        </ion-col>
+
+        <ion-col size=6 class="p-0" style="padding-left: 5px;">
+          <div class="news-card">
+            <img src="assets/news-5.png">
+            <ion-label>
+              <h4 class="news-card-header">
+                EV
+              </h4>
+              <p class="news-card-subtitle">
+                Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+              </p>
+            </ion-label>
+          </div>
+        </ion-col>
+      </ion-row>
+      
+      <ion-row>
+        <ion-col class="pl-20 pr-20">
+          <ion-button class="news-upload" expand="block">
+            DAHA FAZLA YÜKLE
+          </ion-button>
+        </ion-col>
+      </ion-row>
+      
+      <ion-row class="header-text">
+        <ion-col>
+          <ion-label>
+            FAWORİ ÖNERİLERİMİZ
+          </ion-label>
+        </ion-col>
+      </ion-row>
+      <ion-row style="padding:0 15px">
+        <ion-col *ngFor="let item of blog_list" class="ion-margin-bottom" size="6" (click)="goBlogDetail(item.id)">
+          <ion-row>
+            <ion-label style="position: absolute; left: 15px; top: 15px; font-family: 'Futura'; color:#fff; font-size: 20px;width:90%">
+              {{item.title}}
+            </ion-label>
+            <ion-img [src]="item.thumb"></ion-img>
+          </ion-row>
+        </ion-col>
+      </ion-row>
+      -->
+    </div>
+  </ion-grid>
+</ion-content>

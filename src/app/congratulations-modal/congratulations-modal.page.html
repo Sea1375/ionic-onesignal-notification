@@ -1,0 +1,70 @@
+<ion-content>
+  <ion-grid>
+    <ion-row class="mt-25">
+      <ion-col class="text-center" *ngIf="prize">
+        <img src="assets/circle-photo.png" *ngIf="!prize.image">
+        <ion-img [src]="prize.image" *ngIf="prize.image"></ion-img>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col class="text-center">
+        <ion-label class="error-header">
+          {{page_detail.title}}
+        </ion-label>
+      </ion-col>
+    </ion-row>
+
+    <ion-row *ngIf="prize">
+      <ion-col class="text-center ml-15 mr-15">
+        <ion-label class="error-subtitle">
+          <h4>
+          {{prize.title}}
+        </h4>
+          <p [innerHtml]="prize.content">
+          </p>
+        </ion-label>
+      </ion-col>
+    </ion-row>
+
+    <ion-row *ngIf="barcode">
+      <ion-col class="text-center ml-15 mr-15">
+        <ion-label class="error-subtitle">
+          <h4>
+          {{barcode.title}}
+        </h4>
+        </ion-label>
+      </ion-col>
+    </ion-row>
+
+    <ion-row *ngIf="barcode" style="padding: 10% 5%;">
+      <ion-col style="text-align: center;">
+        <img src="assets/paint-counter-bg.png">
+        <ion-label>
+          <h2 class="paint-count-number">
+            {{barcode.amount}} <b class="paint-count-text">LT</b>
+          </h2>
+        </ion-label>
+      </ion-col>
+    </ion-row>
+    
+  </ion-grid>
+</ion-content>
+
+<ion-footer>
+  <ion-row *ngIf="prize" class="ion-margin-start ion-margin-end">
+    <ion-col class="">
+      <ion-button class="new-code" expand="block" (click)="forward()" *ngIf="prize.wanted && prize.wanted!=0">
+        DEVAM ET
+      </ion-button>
+      <ion-button class="new-code" expand="block" (click)="back()" *ngIf="!prize.wanted || prize.wanted==0">
+        TAMAM
+      </ion-button>
+    </ion-col>
+  </ion-row>
+  <ion-row *ngIf="barcode" class="ion-margin-start ion-margin-end">
+    <ion-col>
+      <ion-button class="new-code" expand="block" (click)="back()">TAMAM</ion-button>
+    </ion-col>
+  </ion-row>
+</ion-footer>

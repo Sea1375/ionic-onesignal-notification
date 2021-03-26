@@ -1,0 +1,58 @@
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col class="dismiss-icon">
+        <ion-icon name="close-outline" (click)="dismiss()"></ion-icon>
+      </ion-col>
+    </ion-row>
+    <ion-row class="text-center">
+      <ion-col>
+        <h3 class="header-big-text">
+          BİLGİLER
+        </h3>
+        <p class="header-sub-text">
+          Hediyenin ulaştırılabilmesi için lütfen bilgileri eksiksiz doldur.
+        </p>
+      </ion-col>
+    </ion-row>
+    
+    <ion-row *ngFor="let item of titles; let i = index">
+      <ion-col *ngIf="wanted.indexOf(item.id)>-1">
+        <ion-item style="margin-left: -8%; margin-right: -2%;">
+          <ion-label position="fixed">{{item.title}}</ion-label>
+          
+          <ion-input *ngIf="item.alias!='sex' && item.alias!='city' && item.alias!='district' && item.alias!='size'" [(ngModel)]="form[i]"></ion-input>
+          
+          <ion-select okText="Tamam" cancelText="İptal" *ngIf="item.alias=='sex'" [(ngModel)]="form[i]">
+            <ion-select-option value='1'>Erkek</ion-select-option>
+            <ion-select-option value='2'>Kadın</ion-select-option>
+          </ion-select>
+
+          <ion-select okText="Tamam" cancelText="İptal" *ngIf="item.alias=='size'" [(ngModel)]="form[i]">
+            <ion-select-option value='M'>M</ion-select-option>
+            <ion-select-option value='L'>L</ion-select-option>
+            <ion-select-option value='XL'>XL</ion-select-option>
+          </ion-select>
+
+          <ion-select okText="Tamam" cancelText="İptal" *ngIf="item.alias=='city'" [(ngModel)]="form[i]" (ionChange)="cityChanged(form[i])">
+            <ion-select-option *ngFor="let city of cities" value='{{city.id}}'>{{city.name}}</ion-select-option>
+          </ion-select>
+
+          <ion-select okText="Tamam" cancelText="İptal" *ngIf="item.alias=='district'" [(ngModel)]="form[i]">
+            <ion-select-option *ngFor="let district of districts" value='{{district.id}}'>{{district.name}}</ion-select-option>
+          </ion-select>
+
+        </ion-item>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
+<ion-footer>
+    <ion-row>
+      <ion-col>
+        <ion-button expand="block" class="save-button bg-gray" (click)='save()'>
+          KAYDET
+        </ion-button>
+      </ion-col>
+    </ion-row>
+</ion-footer>

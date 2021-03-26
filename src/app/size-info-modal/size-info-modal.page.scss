@@ -1,0 +1,33 @@
+.dismiss-icon{
+    text-align: right; font-size: xx-large; color:#3A4759
+}
+.text-center{
+    text-align: center;
+}
+.header-big-text{
+    font-family: 'Futura';
+    font-size: 26px;
+    color:#3A4759;
+}
+.header-sub-text{
+    font-family: 'Futura Normal';
+    font-size: 14px;
+    color:#9AA0A6;
+    padding: 0 15%;
+}
+.save-button{
+    --background-activated: #D7DADE;
+    --border-radius: 50px 50px 7px 7px;
+    height: 50px;
+    color: #fff;
+    font-family: 'Futura';
+    font-size: 15px;
+    margin: 10% 3% 3% 3%;
+}
+ion-select {
+    min-width: 100%;
+}
+ion-item{
+    padding: 0 5%;
+    margin-left: -20px;
+}

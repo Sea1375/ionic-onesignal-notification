@@ -1,0 +1,63 @@
+ion-grid{
+    padding: 0;
+}
+.back{
+    position: absolute;
+    top: 20%;
+    left: 25px;
+    z-index: 5;
+    background: rgba(0,0,0,0.3);
+    border-radius: 50%;
+    padding: 10px;
+}
+.share{
+    position: absolute;
+    bottom: 0;
+    right: 20px;
+}
+.tool{
+    background: no-repeat top center / contain;
+    background-size: 100%;
+    height: 320px;
+    position: fixed;
+    z-index: 2;
+    padding: 0;
+}
+.grid{
+    position: absolute;
+    top: 46%;
+}
+.news-icon-text{
+    font-family: 'Futura Light';
+    font-size: 9px;
+    font-weight: bolder;
+    color: #9AA0A6;
+    margin: auto;
+    padding: 0!important;
+}
+.news-icon{
+    text-align: right;
+    margin-top: 4px;
+}
+.news-date{
+    font-family: 'Futura Light';
+    font-size: 13px;
+    color: #3A4759;
+    padding: 0 15px;
+    margin-bottom: 15px;
+}
+.news-header{
+    font-family: 'Futura';
+    font-size: 22px;
+    color: #73BE44;
+    padding: 0 15px;
+    margin-bottom: 15px;
+}
+.news-subtitle{
+    font-family: 'Futura Normal';
+    font-size: 16px;
+    color:#9AA0A6;
+    line-height: 1.4;
+    padding: 0 15px;
+    margin-bottom: 15px;
+}

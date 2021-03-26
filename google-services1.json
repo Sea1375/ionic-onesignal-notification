@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1031142323397",
+    "project_id": "ionicapp-fe06a",
+    "storage_bucket": "ionicapp-fe06a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1031142323397:android:95ae2ea5be517b57e66cac",
+        "android_client_info": {
+          "package_name": "com.carvist.filliboya.faworidunyam"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1031142323397-js86c3mdqk84ajktsd1dqt7v6f45dr24.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBh8r-cmrAeioy-j-SCvMh3-eWRCxiMEp8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1031142323397-js86c3mdqk84ajktsd1dqt7v6f45dr24.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

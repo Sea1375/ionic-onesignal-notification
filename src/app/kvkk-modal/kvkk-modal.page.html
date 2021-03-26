@@ -1,0 +1,31 @@
+<ion-content [scrollEvents]="true" (ionScroll)="logScrollEnd($event)">
+  <ion-grid>
+   
+    <ion-row>
+      <ion-col class="ml-15 mr-15">
+        
+        <ion-label class="header-text ion-margin-bottom">{{contents.uyelik.subject}}</ion-label>
+        <ion-text class="main-text ion-margin-bottom" [innerHtml]="contents.uyelik.content"></ion-text>
+        <hr>
+        <ion-label class="header-text ion-margin-bottom">{{contents.kvkk.subject}}</ion-label>
+        <ion-text class="main-text ion-margin-bottom" [innerHtml]="contents.kvkk.content"></ion-text>
+        <hr>
+        <ion-label class="header-text ion-margin-bottom ion-margin-top">{{contents.gizlilik.subject}}</ion-label>
+        <ion-text class="main-text ion-margin-bottom" [innerHtml]="contents.gizlilik.content"></ion-text>
+        <hr>
+        <ion-label class="header-text ion-margin-bottom ion-margin-top">{{contents.cerezler.subject}}</ion-label>
+        <ion-text class="main-text" [innerHtml]="contents.cerezler.content"></ion-text>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+</ion-content>
+<ion-footer>
+  <ion-row>
+    <ion-col class="ml-15 mr-15">
+      <ion-button class="accept" expand="block" (click)="accept()" disabled="{{button_disabled}}">
+        Kabul Et
+      </ion-button>
+    </ion-col>
+  </ion-row>
+</ion-footer>

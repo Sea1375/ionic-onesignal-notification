@@ -1,0 +1,46 @@
+<ion-content>
+  <ion-grid class="head-grid">
+    <ion-row>
+      <ion-col class="tool">
+        <img class="logo" src="assets/logo.png">
+      </ion-col>
+    </ion-row>
+    <ion-slides pager="true" class="character-slide">
+      <ion-slide>
+        <ion-grid>
+          <ion-row style="margin-top: 45%;">
+            <ion-col></ion-col>
+            <ion-col size=6 style="text-align: center;">
+              <ion-img [src]="avatar.image"></ion-img>
+              <img src="assets/success-icon-big.png" class="success-icon">
+            </ion-col>
+            <ion-col></ion-col>
+          </ion-row>
+
+          <ion-row>
+            <ion-col>
+              <ion-label>
+                <h3>
+                  {{avatar.title}}
+                </h3>
+                <h5>
+                  {{avatar.short_desc}}
+                </h5>
+                <hr>
+                <p>
+                  {{avatar.description}}
+                </p>
+              </ion-label>
+            </ion-col>
+          </ion-row>
+
+        </ion-grid>
+      </ion-slide>
+    </ion-slides>
+  </ion-grid>
+</ion-content>
+<ion-footer>
+  <ion-button expand="block" class="character-btn ion-margin-start ion-margin-end" (click)="confirmChar()">
+    KARAKTERİ ONAYLA
+  </ion-button>
+</ion-footer>

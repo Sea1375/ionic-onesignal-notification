@@ -1,0 +1,110 @@
+/*
+ * App Global CSS
+ * ----------------------------------------------------------------------------
+ * Put style rules here that you want to apply globally. These styles are for
+ * the entire app and not just one component. Additionally, this file can be
+ * used as an entry point to import other CSS/Sass files to be included in the
+ * output CSS.
+ * For more information on global stylesheets, visit the documentation:
+ * https://ionicframework.com/docs/layout/global-stylesheets
+ */
+
+/* Core CSS required for Ionic components to work properly */
+@import "~@ionic/angular/css/core.css";
+
+/* Basic CSS for apps built with Ionic */
+@import "~@ionic/angular/css/normalize.css";
+@import "~@ionic/angular/css/structure.css";
+@import "~@ionic/angular/css/typography.css";
+@import '~@ionic/angular/css/display.css';
+
+/* Optional CSS utils that can be commented out */
+@import "~@ionic/angular/css/padding.css";
+@import "~@ionic/angular/css/float-elements.css";
+@import "~@ionic/angular/css/text-alignment.css";
+@import "~@ionic/angular/css/text-transformation.css";
+@import "~@ionic/angular/css/flex-utils.css";
+@font-face {
+    // font-family: 'Poster Sans';
+    // src: url('assets/Poster-Sans.ttf');//mine
+    // font-family: 'Alata';
+    // src: url('assets/Alata.ttf');
+    font-family: 'Futura';
+    src: url('assets/font/futurxkc.ttf');
+  }
+
+  @font-face {
+    font-family: 'Futura Normal';
+    src: url('assets/font/futuram.ttf');
+  }
+
+  @font-face {
+    font-family: 'Futura Light';
+    src: url('assets/font/futural.ttf');
+  }
+  @font-face {
+    font-family: 'Futural';
+    src: url('assets/font/futuralc.ttf');
+  }
+
+.native-input.sc-ion-input-ios{ padding: 0!important; }
+.my-custom-modal-css.sc-ion-modal-ios-h{--width:85%!important; --height: 70%!important; --border-radius:5px}
+.image-upload-modal-css.sc-ion-modal-ios-h{--width:95%!important; --height: 90%!important; --border-radius:5px 5px 0 0 }
+.image-upload-modal-css .modal-wrapper.ion-overlay-wrapper.sc-ion-modal-ios{position: absolute; bottom: 0;}
+
+.invite-friend-modal-css.sc-ion-modal-ios-h{--width:95%!important; --height: 90%!important; --border-radius:5px 5px 0 0 }
+.invite-friend-modal-css .modal-wrapper.ion-overlay-wrapper.sc-ion-modal-ios{position: absolute; bottom: 0;}
+
+.kvkk-modal-css.sc-ion-modal-ios-h{--width:95%!important; --height: 90%!important; --border-radius:8px 8px 0px 0px;}
+.kvkk-modal-css .modal-wrapper.ion-overlay-wrapper.sc-ion-modal-ios{position: absolute; bottom: 0;}
+
+.congratulations-modal-css.sc-ion-modal-ios-h{--width:95%!important; --height: 80%!important; --border-radius:8px 8px 8px 8px;}
+.congratulations-modal-css .modal-wrapper.ion-overlay-wrapper.sc-ion-modal-ios{position: absolute; bottom: 10%;}
+
+.paint-count-number{
+  position: absolute;
+  top: 11%;
+  left: 50%;
+    width:28%;
+    margin-left:-14%;
+  font-size: 35px!important;
+  color: #F48120;
+  font-family: 'Futura';
+}
+.paint-count-text{
+  font-size: 23px;
+}
+
+ion-slide {
+  width: 100% !important;
+}
+
+.swiper-slide {
+  width: 100%!important;
+}
+
+.character-slide .swiper-pagination-bullets {
+  bottom: -4px !important;
+  --bullet-background:#dedede;
+  --bullet-background-active:#73BE44;
+  --bullet-width: 25px;
+}
+
+.swiper-pagination-bullets {
+  bottom: 0px !important;
+  --bullet-background:#dedede;
+  --bullet-background-active:#73BE44;
+  --bullet-width: 25px;
+}
+
+.swiper-pagination-bullet {
+  width: 25px;
+  height: 5px;
+  border-radius: 6px;
+}
+
+.swiper-pagination-bullet-active {
+    width: 25px;
+    height: 5px;
+    border-radius: 6px;
+}

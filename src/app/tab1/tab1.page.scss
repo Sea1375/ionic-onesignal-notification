@@ -1,0 +1,228 @@
+.p-0{ padding: 0;}
+.pr-0{ padding-right: 0px; }
+.pl-0{ padding-left: 0px;}
+.p-10{padding: 10px;}
+.p-15{padding: 15px;}
+.pt-20{padding-top: 20px;}
+.pl-20{padding-left: 20px;}
+.pl-10{padding-left: 10px;}
+.pr-20{padding-right: 20px;}
+.m-10{margin: 10px;}
+.mt-15{margin-top: 15px;}
+.m-a{margin: auto;}
+.text-center{text-align: center;}
+.tool{
+    background: url("/assets/header-bg.png") no-repeat top center / contain;
+    background-size: 100%;
+    height: 200px;
+    position: fixed;
+    z-index: 2;
+}
+.logo{
+    width: 25%; z-index: 3; position: fixed; left: 37%; top: 35px;
+}
+.rosette-img{
+    vertical-align: -webkit-baseline-middle;
+}
+.back{
+    color: #fff;
+    font-size: larger;
+    left: 30px;
+    position: fixed; top:60px
+}
+.menu{
+    height: 60px;
+    background-color: #fff;
+    border-radius: 5px;
+    margin: auto;
+    margin-top: -35px;
+    box-shadow: 0px 2px 25px -5px gray;
+}
+
+.menu-row{
+    margin-top: 35px; position: fixed; width: 100%; top: 120px; z-index: 4
+}
+ion-segment{
+    background: none;
+}
+ion-segment-button{
+    --indicator-box-shadow:0;
+    color:#9AA0A6;
+    font-weight: bolder;
+    opacity: 1;
+}
+ion-segment-button a {
+    position: relative;
+    top: -2px;
+    color: #9AA0A6;
+    padding-left: 5px;
+}
+ion-segment-button.segment-button-checked a{color:#60B447}
+ion-segment-button.segment-button-checked img{filter: saturate(25) hue-rotate(260deg);}
+ion-segment-button::before{opacity: 1!important;}
+.main{
+    position: absolute; 
+    top:180px; 
+    z-index: -1; 
+    width: 100%;
+}
+.header-text{
+    font-size: 22px;
+    font-family: 'Futura';
+    margin-top: 15px;
+    margin-left: 15px;
+    color:#3A4759
+}
+.sub-text{
+    font-size: 16px;
+    font-family: 'Futura Normal';
+    padding-left: 15px;
+    color:#9AA0A6;
+}
+
+h4{
+    font-family: 'Futura';
+    font-size: 18px;
+}
+
+p{
+    font-family: 'Futura Normal';
+    font-size: 12px;
+}
+.rozet{
+    color: #fff;
+    margin: auto;
+    text-align: center;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    font-size: xx-large ;
+}
+.chance, .chance.blue{
+    background-color: #00AEEE; 
+    margin: 10px 20px 20px 20px; 
+    border-radius: 5px;
+    position: relative
+}
+.chance.green{background-color: #73BE44; }
+.chance.red{background-color: #EA1D25; }
+.chance.dark{background-color: #3A4759; }
+.chance.orange{background-color: #F48120; }
+.chance.black{background-color: #231F20; }
+.chance-icon{position: absolute;left: 20px;top: 0px;width: 22%;padding-top: 10px;border-radius: 0 0 48% 48%;padding: 25px 10px 10px 10px;background-color: #0087b8}
+.chance.green .chance-icon{background-color: #4d802e; }
+.chance.red .chance-icon{background-color: #9c1318; }
+.chance.dark .chance-icon{background-color: #272f3b; }
+.chance.orange .chance-icon{background-color: #a35413; }
+.chance.black .chance-icon{background-color: #75666a; }
+
+.chance-col, .chance-col.blue{
+    margin: auto; text-align: center; background-color:#00AEEE; border-radius: 5px;
+}
+.chance-col.green{ background-color:#73BE44; }
+.chance-col.red{ background-color:#EA1D25; }
+.chance-col.dark{ background-color:#3A4759; }
+.chance-col.orange{ background-color:#F48120; }
+.chance-col.black{ background-color:#231F20; }
+.chance-image{padding: 10px 0px; border-radius: 10px; width: 100%;}
+.chance-button{
+    box-shadow: 0px 2px 25px -5px #000; 
+    border-radius: 50px; 
+    position: absolute;
+    bottom:-5px; 
+    right: 20px;
+}
+ion-slide .chance-header, ion-slide .chance-text, ion-slide .chance-date{
+    text-align: left;
+}
+.chance-header{
+    margin: 0px 15px 5px 15px; 
+    color:#fff;
+    font-family: 'Futura';
+    font-size: 18px;
+}
+.chance-text{
+    margin: 5px 15px; 
+    color:#fff;
+    font-family: 'Futura Normal';
+    font-size: 14px;
+}
+.chance-date{
+    padding: 20px 15px; 
+    color:#fff;
+    font-family: 'Futura Normal';
+    font-size: 12px;
+}
+.fawori-news{
+    background-color: #fff; 
+    margin: 10px 20px 20px 20px; 
+    border-radius: 5px; 
+    box-shadow: 0px 0px 10px -3px gray;
+}
+.news-slider{
+    background-color: #73BE44; 
+    margin: 10px 20px 20px 20px; 
+    border-radius: 5px; 
+    box-shadow: 0px 0px 10px -3px #000;
+}
+.news-col{
+    margin: auto; 
+    text-align: center; 
+    background-color:#73BE44; 
+    border-radius: 5px;
+}
+.fawori-news-header a{
+    font-family: 'Futura';
+    color: #3A4759;
+    font-size: 12px;
+}
+.fawori-news-header p{
+    font-family: 'Futura Normal';
+    color: #9AA0A6;
+    font-size: 12px;
+    margin-top: 10px;
+}
+.second-col-news{
+    margin: 10px 20px 20px 20px; 
+}
+.news-card{
+    border-radius:10px;
+    box-shadow: 0px 0px 10px -3px gray;
+    text-align: center;
+}
+.news-card img{
+    padding: 7px 5px 5px 5px;
+}
+.news-card-header{
+    font-family: 'Futura';
+    font-size: 12px;
+    text-align: left;
+    padding: 0 10px 5px 10px;
+    color:#0064FE;
+}
+.news-card-subtitle{
+    font-family: 'Futura Normal';
+    font-size: 12px;
+    text-align: left;
+    padding: 0 10px 25px 10px;
+}
+.news-upload{
+    --background:transparent;
+    --background-activated:transparent;
+    border:1px solid #9AA0A6;
+    border-radius: 5px;
+    color:#9AA0A6;
+    font-family: 'Futura';
+    font-size: 13px;
+}
+ion-segment-button{padding-top:12px;padding-bottom:15px;background-color:transparent!important;--indicator-color:transparent}
+ion-segment-button.segment-button-checked::after{content: '';
+    position: absolute;
+    background: #60B447;
+    bottom: -1px;
+    left: 45%;
+    width: 20px;
+    border-radius: 35px;
+    height: 5px;}

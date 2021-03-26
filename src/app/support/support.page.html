@@ -1,0 +1,62 @@
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col class="dismiss-icon">
+        <ion-icon name="close-outline" (click)="dismiss()"></ion-icon>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col class="text-center">
+        <img class="fawori-header-img" src="assets/support-modal-icon.png">
+      </ion-col>
+    </ion-row>
+    <ion-row class="fawori-header-text">
+      <ion-label>
+        <h3 class="fawori-big-text">
+         SİZE NASIL YARDIMCI OLABİLİRİZ?
+        </h3>
+        <p class="fawori-sub-text" [innerHtml]="contents.contact_sub_title">
+        </p>
+      </ion-label>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-label>
+          <p>
+            Ad
+          </p>
+        </ion-label>
+        <ion-item>
+          <ion-input [(ngModel)]="contact_form.name"></ion-input>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col>
+        <ion-label>
+          <p>
+            Soyad
+          </p>
+        </ion-label>
+        <ion-item>
+          <ion-input [(ngModel)]="contact_form.lastname"></ion-input>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col>
+        <ion-item>
+          <ion-textarea placeholder="Konu" [(ngModel)]="contact_form.subject" rows=3></ion-textarea>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+
+  </ion-grid>
+</ion-content>
+<ion-footer>
+  <ion-button expand="block" (click)="sendForm()">
+    GÖNDER
+  </ion-button>
+</ion-footer>

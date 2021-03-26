@@ -1,0 +1,117 @@
+ion-grid{
+    padding: 0!important;
+}
+@media (min-height:568px) and (max-height:666px){
+    .slide-item-close{
+        --min-height:275px!important
+    }
+    .grid{
+        top: 55%!important;
+    }
+}
+@media (min-height:667px) and (max-height:735px){
+    .slide-item-close{
+        --min-height:320px!important
+    }
+    .grid{
+        top: 55%!important;
+    }
+}
+@media (min-height:736px) and (max-height:737px){
+    .slide-item-close{
+        --min-height:360px!important
+    }
+    .grid{
+        top: 55%!important;
+    }
+}
+.rosette{position: absolute;top: 50%;right: 0;width:22%;border-radius: 45% 0 0 45%;padding: 10px 25px 10px 10px;background-color: #0087b8; }
+.rosette.green{background-color: #4d802e; }
+.rosette.red{background-color: #9c1318; }
+.rosette.dark{background-color: #272f3b; }
+.rosette.orange{background-color: #a35413; }
+.rosette.black{background-color: #75666a; }
+.rosette img{max-height: 40px;}
+.back{
+    position: absolute;
+    top: 20%;
+    left: 25px;
+    background: rgba(0,0,0,0.3);
+    border-radius: 50%;
+    padding: 10px;
+    z-index: 5;
+}
+.tool{
+    background: no-repeat top center;
+    background-size: cover;
+    height: 42vh;
+    position: fixed;
+    z-index: 2;
+    padding: 0;
+}
+.bottom-line{position: absolute;bottom:-5px;left:0px;width:100%}
+.bottom-line.blue{filter: hue-rotate(175deg) saturate(0.8);}
+.bottom-line.red{filter: hue-rotate(-30deg) saturate(1);}
+.bottom-line.green{filter: hue-rotate(100deg) saturate(0.8);}
+.bottom-line.dark{filter: hue-rotate(200deg) saturate(0.1);}
+.slide-item{
+    height: 42vh;
+}
+.slide-item-close{
+    --background: transparent; 
+    --min-height: 320px; 
+    z-index: 0;
+}
+.slide-item-open{
+    --background:transparent; 
+    width: 100%; 
+    z-index: 1;
+}
+.grid{
+    position: absolute;
+    top: 46%;
+}
+.chance-date{
+    font-family: 'Futura Light';
+    font-size: 12px;
+    padding: 0px 20px;
+}
+.chance-header{font-family: 'Futura';font-size:22px;color:#00AEEE;padding: 15px 20px;}
+.chance-header.green{color: #73BE44; }
+.chance-header.red{color: #EA1D25; }
+.chance-header.dark{color: #3A4759; }
+.chance-header.orange{color: #F48120; }
+.chance-header.black{color: #231F20; }
+
+.chance-subtitle{font-family: 'Futura Normal';font-size: 16px;padding: 0px 20px;color:#9AA0A6;line-height: 1.4;}
+.chance-button{
+    padding: 20px;
+}
+.participation{
+    --background:transparent;
+    border:1px solid #9AA0A6;
+    border-radius: 5px;
+    color:#9AA0A6;
+    font-family: 'Futura Light';
+    font-size: 12px;
+    height: 50px;
+}
+.participation b{
+    padding-left: 5px;
+}
+.chance-rosette-button{ text-align: center; margin-top: 40px; }
+.chance-rosette-button.red{filter: hue-rotate(-205deg);}
+.chance-rosette-button.green{filter: hue-rotate(280deg);}
+.chance-rosette-button.orange{filter: hue-rotate(190deg);}
+.chance-rosette-button.dark{filter:hue-rotate(220deg) saturate(0.1)}
+.chance-rosette-button.black{filter:hue-rotate(220deg) saturate(0.1)}
+
+ion-item-option.ion-activated{
+    background:transparent!important;
+}
+:host(.ion-activated){
+    background:transparent!important;
+}
+.item-options-ios.item-options-end{
+    border-bottom-width: 0px!important;
+}

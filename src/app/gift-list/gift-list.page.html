@@ -1,0 +1,126 @@
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <h3 class="fawori-big-text ion-no-margin">
+          HEDİYELERİM
+        </h3>
+      </ion-col>
+      <ion-col class="dismiss-icon">
+        <ion-icon name="close-outline" (click)="dismiss()"></ion-icon>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col>
+
+        <ion-segment (ionChange)="segmentChanged($event)" value="{{the_segment}}">
+          <ion-segment-button value="guncel">
+            <ion-label>Güncel</ion-label>
+          </ion-segment-button>
+          <ion-segment-button value="gecmis">
+            <ion-label>Geçmiş</ion-label>
+          </ion-segment-button>
+        </ion-segment>
+
+        <ion-grid lines='full' *ngIf="the_segment=='guncel'">
+
+          <div *ngFor="let item of the_list">
+            <ion-row *ngIf="item.status<4" style="border-bottom:1px solid #efefef">
+              <ion-col size='2'>
+                <ion-img [src]="item.gift.image"></ion-img>
+              </ion-col>
+              <ion-col class='gift-item'>
+
+                <h3 class='ion-float-right'>{{item.date_of}}</h3>
+                <h2>{{item.gift.title}}</h2>
+
+                <p class="ion-no-margin">{{giftStatus[item.status]}}</p>
+                <p class='text-orange' *ngIf="item.gift.type==1" (click)="cityChanged(item.city); item.show=!item.show">
+                  Adres Görüntüle / Düzenle
+                </p>
+                <div *ngIf="item.show">
+
+                  <div *ngIf="item.status>1">
+                    <p style='white-space: normal;'>{{item.address}}</p>
+                    <p>{{getDistrictName(item.district)}} - {{getCityName(item.city)}}</p>
+                  </div>
+
+                  <ion-list lines='full' *ngIf="item.status<2">
+                    <ion-item style="padding-left:0px">
+                      <ion-textarea [(ngModel)]="item.address" rows="3"></ion-textarea>
+                    </ion-item>
+                    <ion-item style="padding-left:0px">
+                      <ion-select okText="Tamam" cancelText="İptal" [(ngModel)]="item.city"
+                        (ionChange)="cityChanged(item.city)">
+                        <ion-select-option *ngFor="let city of cities" value='{{city.id}}'>{{city.name}}
+                        </ion-select-option>
+                      </ion-select>
+                    </ion-item>
+
+                    <ion-item style="padding-left:0px">
+                      <ion-select okText="Tamam" cancelText="İptal" [(ngModel)]="item.district">
+                        <ion-select-option *ngFor="let district of districts" value='{{district.id}}'>{{district.name}}
+                        </ion-select-option>
+                      </ion-select>
+                    </ion-item>
+
+                  </ion-list>
+                  <ion-button size='normal' expand='block' *ngIf="item.status<2">Adresi
+                    Güncelle</ion-button>
+                  <!-- <ion-button size='normal' expand='block' *ngIf="item.status<2" (click)="updateGiftInfo(item)">Adresi
+                      Güncelle</ion-button> -->
+
+                </div>
+
+              </ion-col>
+
+            </ion-row>
+          </div>
+        </ion-grid>
+
+
+        <ion-grid lines='full' *ngIf="the_segment=='guncel'">
+
+          <div *ngFor="let item of the_list">
+            <ion-row *ngIf="item.status>=4" style="border-bottom:1px solid #efefef">
+              <ion-col size='2'>
+                <ion-img [src]="item.gift.image"></ion-img>
+              </ion-col>
+              <ion-col class='gift-item'>
+
+                <h3 class='ion-float-right'>{{item.sent_date}}</h3>
+                <h2>{{item.gift.title}}</h2>
+
+                <p class="ion-no-margin">{{giftStatus[item.status]}}</p>
+                <p class='text-orange' *ngIf="item.gift.type==1" (click)="cityChanged(item.city); item.show=!item.show">
+                  Adres Görüntüle
+                </p>
+                <div *ngIf="item.show">
+
+                  <div *ngIf="item.status>1">
+                    <p style='white-space: normal;'>{{item.address}}</p>
+                    <p>{{getDistrictName(item.district)}} - {{getCityName(item.city)}}</p>
+                  </div>
+
+
+                </div>
+
+              </ion-col>
+
+            </ion-row>
+          </div>
+        </ion-grid>
+
+      </ion-col>
+    </ion-row>
+
+
+
+  </ion-grid>
+</ion-content>
+<ion-footer>
+  <ion-button class="main" expand="block" (click)="dismiss()">
+    KAPAT
+  </ion-button>
+</ion-footer>

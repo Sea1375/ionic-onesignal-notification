@@ -1,0 +1,25 @@
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <h4 class="fawori-big-text ion-no-margin">
+          {{pcontent.subject}}
+         </h4>
+      </ion-col>
+      <ion-col class="dismiss-icon">
+        <ion-icon name="close-outline" (click)="dismiss()"></ion-icon>
+      </ion-col>
+    </ion-row>
+
+    <ion-row *ngIf='pcontent'>
+      <ion-col>
+        <p [innerHtml]="pcontent.content"></p>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
+<ion-footer>
+  <ion-button expand="block" (click)="dismiss()">
+    KAPAT
+  </ion-button>
+</ion-footer>
